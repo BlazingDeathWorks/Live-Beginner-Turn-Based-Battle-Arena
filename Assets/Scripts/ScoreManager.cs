@@ -5,16 +5,25 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private int score;
+    public static ScoreManager Instance;
     [SerializeField] private Text scoreText;
+    [SerializeField] private int scoreIncrease = 1;
+    private int score;
 
-    void Update()
+    private void Awake()
+    {
+        Instance = this;
+        UpdateScore();
+    }
+
+    private void UpdateScore()
     {
         scoreText.text = "Score: " + score.ToString();
     }
 
-    public void ScoreIncrease(int newScore)
+    public void ScoreIncrease()
     {
-        score += newScore;
+        score += scoreIncrease;
+        UpdateScore();
     }
 }
