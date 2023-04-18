@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerActionController : MonoBehaviour
 {
-    private int pow = 1;
+    private int pow = 3;
     private PlayerHealth playerHealth;
 
     private void Awake()

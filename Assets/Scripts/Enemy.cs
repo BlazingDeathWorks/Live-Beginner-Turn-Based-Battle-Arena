@@ -29,9 +29,11 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             ScoreManager.Instance.ScoreIncrease();
-            TurnManager.Instance.EndTurn();
             EnemySpawner.Instance.SpawnEnemy(0.5f);
+            TurnManager.Instance.EndTurn(true);
+            return;
         }
+        TurnManager.Instance.EndTurn();
     }
 
     public void SetEnemy(Slider slider, int health, int damage)

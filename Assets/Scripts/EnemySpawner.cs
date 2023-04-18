@@ -22,7 +22,6 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.SetEnemy(enemyHealthBar, Random.Range(minHealth, maxHealth + 1), Random.Range(minDamage, maxDamage + 1));
         GameManager.Instance.RegisterEnemy(enemy);
-        TurnManager.Instance.EndTurn();
     }
 
     public void SpawnEnemy(float waitTime = 0)

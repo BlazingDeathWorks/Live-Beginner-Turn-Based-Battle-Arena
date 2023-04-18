@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(int value)
     {
         health += value;
+        health = (int)Mathf.Clamp(health, 0, playerHealthSlider.maxValue);
         UpdateHealthSlider();
     }
 
